@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CraftImage| Home</title>
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap' %}"
+    rel="stylesheet">
+  <link href="{% static 'C:\Users\nadeem\Desktop\Craft\static\style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+  <div class="box-area">
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="#">CraftImage</a>
+        </div>
+        <nav>
+        {% for Navchang in navbar %}
+          <a href="{{Navchang.link}}">{{ Navchang.text}}</a>
+        {% endfor %}
+        </nav>
+      </div>
+    </header>
+    <div class="banner-area">
+      <img src="{% static 'C:\Users\nadeem\Desktop\Craft\static\IMG_4805.jpeg'%}" alt="banner" style="height: 500px; width: 1380px;">
+    </div>
+    <div class="content-area">
+      <div class="wrapper">
+        <h2>Album area</h2>
+        {% for Albumzone in album %}
+        <div class="gallery">
+          <a target="_blank" href="#">
+            <img src="{{Albumzone.img.url}}" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">{{Albumzone.description | safe}}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <footer>
+      <div class="content">
+      <div class="bottom">
+        <p>Copyright © 2021 CraftImage</p>
+      </div>
+        </div>
+      </div>
+      
+    </footer>
+
+  </div>
+</body>
+
+</html>
